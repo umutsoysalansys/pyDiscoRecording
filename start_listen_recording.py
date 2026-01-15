@@ -13,11 +13,18 @@ discovery = Discovery(host="localhost", port=50051)
 print(discovery)
 print(discovery._client)
 
-# Create output files next to this script
+# Create output files in organized folders
 script_dir = Path(__file__).parent
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-output_file = script_dir / f"recording_{timestamp}.py"
-log_file = script_dir / f"log_{timestamp}.json"
+
+# Create folders if they don't exist
+recordings_dir = script_dir / "recordings"
+logs_dir = script_dir / "logs"
+recordings_dir.mkdir(exist_ok=True)
+logs_dir.mkdir(exist_ok=True)
+
+output_file = recordings_dir / f"recording_{timestamp}.py"
+log_file = logs_dir / f"log_{timestamp}.json"
 
 print(f"Writing recordings to: {output_file}")
 print(f"Writing raw logs to: {log_file}")
