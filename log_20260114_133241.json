@@ -1,0 +1,45 @@
+[
+{
+  "raw_event": {
+    "recording_method": "SetHeat_TotalHeat",
+    "recording_method_signature": "",
+    "recording_parameters": {
+      "TotalHeat": "300 W",
+      "Label": "Heat 1"
+    }
+  },
+  "script_command": "Heat.change_magnitude()"
+},
+{
+  "raw_event": {
+    "recording_method": "SetHeat_TotalHeat",
+    "recording_method_signature": "",
+    "recording_parameters": {
+      "TotalHeat": "55 W",
+      "Label": "Heat 1"
+    }
+  },
+  "script_command": "Heat.change_magnitude()"
+},
+{
+  "raw_event": {
+    "recording_method": "SetHeat_TotalHeat",
+    "recording_method_signature": "",
+    "recording_parameters": {
+      "TotalHeat": "99 W",
+      "Label": "Heat 1"
+    }
+  },
+  "script_command": "Heat.change_magnitude()"
+},
+{
+  "raw_event": {
+    "recording_method": "SetHeat_TotalHeat",
+    "recording_method_signature": "",
+    "recording_parameters": {
+      "TotalHeat": "123 W",
+      "Label": "Heat 1"
+    }
+  },
+  "script_command": "Heat.change_magnitude()"
+}

@@ -1,0 +1,12 @@
+[
+{
+  "raw_event": {
+    "recording_method": "SetHeat_TotalHeat",
+    "recording_method_signature": "",
+    "recording_parameters": {
+      "TotalHeat": "34 W",
+      "Label": "Heat 1"
+    }
+  },
+  "script_command": "heat = Heat.get_by_label(simulation, \"Heat 1\")\nheat.change_magnitude(34)"
+}

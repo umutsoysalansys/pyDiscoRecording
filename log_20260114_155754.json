@@ -1,0 +1,33 @@
+[
+{
+  "raw_event": {
+    "recording_method": "Open",
+    "recording_method_signature": "",
+    "recording_parameters": {
+      "FilePath": "D:\\AnsysDev\\pydiscovery\\tests\\test_files\\Heat_Sink_Thermal.dsco"
+    }
+  },
+  "script_command": "design = discovery.open_design(\"D:/AnsysDev/pydiscovery/tests/test_files/Heat_Sink_Thermal.dsco\")"
+},
+{
+  "raw_event": {
+    "recording_method": "SetHeat_TotalHeat",
+    "recording_method_signature": "",
+    "recording_parameters": {
+      "TotalHeat": "25 W",
+      "Label": "Heat 1"
+    }
+  },
+  "script_command": "heat = Heat.get_by_label(simulation, \"Heat 1\")\nheat.change_magnitude(25)"
+},
+{
+  "raw_event": {
+    "recording_method": "CreateHeat",
+    "recording_method_signature": "",
+    "recording_parameters": {
+      "TotalHeat": "75 W",
+      "Body": "0:26/0:140/0:143"
+    }
+  },
+  "script_command": "body1 = design.components[0].components[0].bodies[0]\npower = 75 * ureg.watt\nHeat.create_volumetric(simulation, body1, value=power)"
+}

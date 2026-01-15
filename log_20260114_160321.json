@@ -1,0 +1,33 @@
+[
+{
+  "raw_event": {
+    "recording_method": "Open",
+    "recording_method_signature": "",
+    "recording_parameters": {
+      "FilePath": "C:\\Users\\usoysal\\AppData\\Local\\Temp\\DiscoveryApiServerData\\a4cbde9f-f3f8-407d-ac67-9cd4cf3c0a27\\Heat_Sink_Thermal\\Extraction\\Heat_Sink_Thermal.dsco"
+    }
+  },
+  "script_command": "design = discovery.open_design(\"C:/Users/usoysal/AppData/Local/Temp/DiscoveryApiServerData/a4cbde9f-f3f8-407d-ac67-9cd4cf3c0a27/Heat_Sink_Thermal/Extraction/Heat_Sink_Thermal.dsco\")"
+},
+{
+  "raw_event": {
+    "recording_method": "SetHeat_TotalHeat",
+    "recording_method_signature": "",
+    "recording_parameters": {
+      "TotalHeat": "25 W",
+      "Label": "Heat 1"
+    }
+  },
+  "script_command": "heat = Heat.get_by_label(simulation, \"Heat 1\")\nheat.change_magnitude(25)"
+},
+{
+  "raw_event": {
+    "recording_method": "CreateHeat",
+    "recording_method_signature": "",
+    "recording_parameters": {
+      "TotalHeat": "99 W",
+      "Body": "0:26/0:140/0:143"
+    }
+  },
+  "script_command": "body1 = design.components[0].components[0].bodies[0]\npower = 99 * ureg.watt\nHeat.create_volumetric(simulation, body1, value=power)"
+}
