@@ -2,6 +2,7 @@ from ansys.discovery.core.conditions.heat import Heat
 from ansys.discovery.core.discovery import Discovery
 from ansys.discovery.core.quantities.pint_utils import ureg
 import json
+import os
 from datetime import datetime
 from pathlib import Path
 
@@ -61,9 +62,11 @@ with open(output_file, 'w') as f, open(log_file, 'w') as log_f:
             log_f.write(",\n")
         log_f.write(json.dumps(event_data, indent=2))
         log_f.flush()
+        os.fsync(log_f.fileno())  # Force write to disk
         first_event = False
 
         # Write the converted PyDiscovery script command
         if script_command:
             f.write(f"{script_command}\n")
             f.flush()  # Ensure data is written immediately
+            os.fsync(f.fileno())  # Force write to disk
